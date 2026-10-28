@@ -3,13 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>روابط التيمز الخاصة بأروقة الوجه البحري | الجامع الأزهر</title>
-<meta name="description" content="روابط اجتماعات Microsoft Teams الخاصة بأروقة الوجه البحري التابعة للجامع الأزهر الشريف. اختر المحافظة للانضمام.">
+<title>روابط التيمز الخاصة بالأروقة التابعة للجامع الأزهر</title>
+<meta name="description" content="روابط اجتماعات Microsoft Teams الخاصة بالأروقة التابعة للجامع الأزهر الشريف. اختر الوجه البحري أو الوجه القبلي ثم المحافظة.">
 <meta name="theme-color" content="#0d4a3a">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23c9a24b' d='M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&family=Reem+Kufi:wght@500;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<noscript><style>[hidden] { display: block !important; }</style></noscript>
 <style>
   :root {
     --green-900: #08352a;
@@ -23,6 +24,7 @@
   }
   * { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; }
+  [hidden] { display: none !important; }
   body {
     margin: 0;
     font-family: "Amiri", "Traditional Arabic", "Noto Naskh Arabic", serif;
@@ -52,7 +54,6 @@
     border-radius: 999px 999px 0 0;
     outline: 1px solid var(--gold-soft);
     outline-offset: 8px;
-    outline-style: solid;
     clip-path: inset(-10px -10px 0 -10px);
   }
   .basmala {
@@ -75,7 +76,7 @@
     color: var(--gold-soft);
   }
 
-  /* ---------- القائمة ---------- */
+  /* ---------- عام ---------- */
   main {
     width: min(100% - 2rem, 980px);
     margin: 0 auto;
@@ -85,25 +86,71 @@
     text-align: center;
     margin: 0 0 .25rem;
     font-family: "Reem Kufi", "Amiri", sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 700;
     color: var(--green-700);
   }
-  .note {
-    text-align: center;
-    margin: 0 0 1rem;
-    color: #4d625b;
-  }
+  .lead:focus { outline: none; }
+  .note { text-align: center; margin: 0 0 1rem; color: #4d625b; }
   .divider {
     display: flex; align-items: center; gap: .75rem;
     width: min(100%, 320px); margin: 0 auto 2rem;
-    color: var(--gold);
   }
-  .divider::before, .divider::after {
-    content: ""; flex: 1; height: 1px; background: currentColor;
-  }
+  .divider::before, .divider::after { content: ""; flex: 1; height: 1px; background: var(--gold); }
   .divider .star { width: 18px; height: 18px; fill: var(--gold); }
 
+  /* ---------- اختيار القطاع ---------- */
+  .regions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+    gap: 1.5rem;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .region-btn {
+    display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
+    gap: .25rem;
+    min-height: 220px;
+    padding: 2.5rem 1rem 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    color: var(--ivory);
+    background: var(--green-700);
+    border: 2px solid var(--gold);
+    border-radius: 999px 999px 12px 12px;
+    outline: 1px solid var(--gold-soft);
+    outline-offset: -8px;
+    transition: background-color .2s, transform .2s, box-shadow .2s;
+  }
+  .region-btn .star { width: 30px; height: 30px; fill: var(--gold); margin-bottom: .5rem; }
+  .region-btn .rname {
+    font-family: "Reem Kufi", "Amiri", sans-serif;
+    font-weight: 700;
+    font-size: 1.9rem;
+    line-height: 1.4;
+  }
+  .region-btn .count { color: var(--gold-soft); font-size: 1.05rem; }
+  .region-btn:hover, .region-btn:focus-visible {
+    background: var(--green-900);
+    box-shadow: 0 10px 22px rgba(8, 53, 42, .3);
+    transform: translateY(-3px);
+  }
+  .region-btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+
+  /* ---------- المحافظات ---------- */
+  .back {
+    display: inline-block;
+    margin: 0 0 1.5rem;
+    padding: .2rem 1rem;
+    color: var(--green-700);
+    text-decoration: none;
+    border: 1.5px solid var(--gold);
+    border-radius: 999px;
+    font-weight: 700;
+    transition: background-color .2s, color .2s;
+  }
+  .back:hover, .back:focus-visible { background: var(--green-700); color: var(--ivory); }
+  .back:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
   .grid {
     list-style: none; margin: 0; padding: 0;
     display: grid;
@@ -111,7 +158,6 @@
     gap: 1rem;
   }
   .card {
-    position: relative;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     gap: .15rem;
     min-height: 118px;
@@ -156,8 +202,8 @@
   footer p { margin: 0; }
 
   @media (prefers-reduced-motion: reduce) {
-    .card { transition: none; }
-    .card:hover, .card:focus-visible { transform: none; }
+    .card, .region-btn { transition: none; }
+    .card:hover, .card:focus-visible, .region-btn:hover, .region-btn:focus-visible { transform: none; }
   }
   @media (max-width: 420px) {
     .arch { padding-top: 3rem; outline-offset: 5px; }
@@ -170,35 +216,94 @@
   <header class="hero">
     <div class="arch">
       <p class="basmala">بسم الله الرحمن الرحيم</p>
-      <h1>روابط التيمز الخاصة بأروقة الوجه البحري</h1>
+      <h1>روابط التيمز الخاصة بالأروقة</h1>
       <p class="sub">التابعة للجامع الأزهر الشريف</p>
     </div>
   </header>
 
   <main>
-    <h2 class="lead">اختر المحافظة</h2>
-    <p class="note">اضغط على اسم المحافظة للانتقال إلى رابط الاجتماع على Teams.</p>
-    <div class="divider" aria-hidden="true"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg></div>
+    <section id="home">
+      <h2 class="lead">اختر القطاع</h2>
+      <p class="note">اضغط على القطاع لعرض محافظاته.</p>
+      <div class="divider" aria-hidden="true"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg></div>
+      <div class="regions">
+        <a class="region-btn" href="#bahari"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="rname">الوجه البحري</span><span class="count">١٣ محافظة</span></a>
+        <a class="region-btn" href="#qibli"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="rname">الوجه القبلي</span><span class="count">١٤ محافظة</span></a>
+      </div>
+    </section>
 
-    <ul class="grid">
-      <li><a class="card" href="https://teams.microsoft.com/meet/384914917920528?p=EL6wfNpWBZMbscRKUH" target="_blank" rel="noopener noreferrer"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="name">القاهرة</span><span class="hint">الدخول إلى اجتماع Teams</span></a></li>
-      <li><a class="card" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_MDgwMTBiMmUtOWYzMS00ZWMxLWI1NDUtNmM2NjU0ZjMxNTVj%40thread.v2/0?context=%7b%22Tid%22%3a%226ee2382e-9835-4eda-865d-83be47122d9a%22%2c%22Oid%22%3a%22807a6cb4-5a5e-43ab-9af5-fac09df3c371%22%7d" target="_blank" rel="noopener noreferrer"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="name">القليوبية</span><span class="hint">الدخول إلى اجتماع Teams</span></a></li>
-      <li><a class="card" href="https://teams.microsoft.com/meet/370931491446638?p=zMMTZk5IeeEhHYlK7X" target="_blank" rel="noopener noreferrer"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="name">المنوفية</span><span class="hint">الدخول إلى اجتماع Teams</span></a></li>
-      <li><a class="card" href="https://teams.microsoft.com/meet/363255180345076?p=85rBRi5XubIWcg3NDy" target="_blank" rel="noopener noreferrer"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="name">الدقهلية</span><span class="hint">الدخول إلى اجتماع Teams</span></a></li>
-      <li><a class="card" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_MGYxYTVlODEtNDk1Zi00N2M3LThkOTUtZjEzOGY5MDc5N2Zk%40thread.v2/0?context=%7b%22Tid%22%3a%226ee2382e-9835-4eda-865d-83be47122d9a%22%2c%22Oid%22%3a%22241a48e4-46c1-43cc-99cf-288b26155927%22%7d" target="_blank" rel="noopener noreferrer"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="name">الغربية</span><span class="hint">الدخول إلى اجتماع Teams</span></a></li>
-      <li><a class="card" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_N2I5NTkxYTgtNmUwZi00NDYyLTgxZTMtNmZmY2JhNGUxZjBm%40thread.v2/0?context=%7b%22Tid%22%3a%226ee2382e-9835-4eda-865d-83be47122d9a%22%2c%22Oid%22%3a%22874316ab-a72b-43dd-b117-561f0e708bbd%22%7d" target="_blank" rel="noopener noreferrer"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="name">كفر الشيخ</span><span class="hint">الدخول إلى اجتماع Teams</span></a></li>
-      <li><a class="card" href="https://teams.microsoft.com/meet/358297911833?p=20N8nIiu57CBNNhIg8" target="_blank" rel="noopener noreferrer"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="name">البحيرة</span><span class="hint">الدخول إلى اجتماع Teams</span></a></li>
-      <li><a class="card" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_ZDYzZTljNTItZjc0Yi00ZDRlLTk5NDUtZWQ0MDFjN2FmOWU4%40thread.v2/0?context=%7b%22Tid%22%3a%226ee2382e-9835-4eda-865d-83be47122d9a%22%2c%22Oid%22%3a%22c551bc14-23ef-4be7-a7c0-69ec3133c5f7%22%7d" target="_blank" rel="noopener noreferrer"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="name">الإسكندرية</span><span class="hint">الدخول إلى اجتماع Teams</span></a></li>
-      <li><a class="card" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_YjQ2ZTJkZjUtOWJhNy00MzA0LWE0MmQtY2JmMWRkMjdjMjU5%40thread.v2/0?context=%7b%22Tid%22%3a%226ee2382e-9835-4eda-865d-83be47122d9a%22%2c%22Oid%22%3a%22b676d67b-72d3-4ccb-8963-31ebc260c861%22%7d" target="_blank" rel="noopener noreferrer"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="name">مطروح</span><span class="hint">الدخول إلى اجتماع Teams</span></a></li>
-      <li><a class="card" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_ZWExNjRiMTktNTRjOS00N2IxLTk1NzgtOTcyZWE1MzE2M2M3%40thread.v2/0?context=%7b%22Tid%22%3a%226ee2382e-9835-4eda-865d-83be47122d9a%22%2c%22Oid%22%3a%226b553f9c-4f0a-4c85-a559-63b0e2309030%22%7d" target="_blank" rel="noopener noreferrer"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="name">دمياط</span><span class="hint">الدخول إلى اجتماع Teams</span></a></li>
-      <li><a class="card" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_MWZmMWU2YWQtMTk0Ni00YTNiLTkxMGEtNTlhMjE1M2JhN2M4%40thread.v2/0?context=%7b%22Tid%22%3a%226ee2382e-9835-4eda-865d-83be47122d9a%22%2c%22Oid%22%3a%2218c695e2-1d5a-4609-821e-61109eaea4d2%22%7d" target="_blank" rel="noopener noreferrer"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="name">الشرقية</span><span class="hint">الدخول إلى اجتماع Teams</span></a></li>
-      <li><a class="card" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_Mjk1Y2I5MjEtN2E1OS00NzAzLTgwMjctMzYyNjlhZGQyNGNk%40thread.v2/0?context=%7b%22Tid%22%3a%226ee2382e-9835-4eda-865d-83be47122d9a%22%2c%22Oid%22%3a%2221044192-b27e-4bc1-bb20-ca4a243bb0ac%22%7d" target="_blank" rel="noopener noreferrer"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="name">الإسماعيلية</span><span class="hint">الدخول إلى اجتماع Teams</span></a></li>
-      <li><a class="card" href="https://teams.live.com/meet/9349392489028?p=4jrrQzepxuTfQmbH2N" target="_blank" rel="noopener noreferrer"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="name">بور سعيد</span><span class="hint">الدخول إلى اجتماع Teams</span></a></li>
-    </ul>
+    <section id="bahari" hidden>
+      <a class="back" href="#home">العودة إلى القطاعات</a>
+      <h2 class="lead" tabindex="-1">الوجه البحري</h2>
+      <p class="note">اضغط على اسم المحافظة للانتقال إلى رابط الاجتماع على Teams.</p>
+      <div class="divider" aria-hidden="true"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg></div>
+      <ul class="grid">
+        <li><a class="card" href="https://teams.microsoft.com/meet/384914917920528?p=EL6wfNpWBZMbscRKUH" target="_blank" rel="noopener noreferrer"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="name">القاهرة</span><span class="hint">الدخول إلى رابط Teams</span></a></li>
+        <li><a class="card" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_MDgwMTBiMmUtOWYzMS00ZWMxLWI1NDUtNmM2NjU0ZjMxNTVj%40thread.v2/0?context=%7b%22Tid%22%3a%226ee2382e-9835-4eda-865d-83be47122d9a%22%2c%22Oid%22%3a%22807a6cb4-5a5e-43ab-9af5-fac09df3c371%22%7d" target="_blank" rel="noopener noreferrer"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="name">القليوبية</span><span class="hint">الدخول إلى رابط Teams</span></a></li>
+        <li><a class="card" href="https://teams.microsoft.com/meet/370931491446638?p=zMMTZk5IeeEhHYlK7X" target="_blank" rel="noopener noreferrer"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="name">المنوفية</span><span class="hint">الدخول إلى رابط Teams</span></a></li>
+        <li><a class="card" href="https://teams.microsoft.com/meet/363255180345076?p=85rBRi5XubIWcg3NDy" target="_blank" rel="noopener noreferrer"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="name">الدقهلية</span><span class="hint">الدخول إلى رابط Teams</span></a></li>
+        <li><a class="card" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_MGYxYTVlODEtNDk1Zi00N2M3LThkOTUtZjEzOGY5MDc5N2Zk%40thread.v2/0?context=%7b%22Tid%22%3a%226ee2382e-9835-4eda-865d-83be47122d9a%22%2c%22Oid%22%3a%22241a48e4-46c1-43cc-99cf-288b26155927%22%7d" target="_blank" rel="noopener noreferrer"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="name">الغربية</span><span class="hint">الدخول إلى رابط Teams</span></a></li>
+        <li><a class="card" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_N2I5NTkxYTgtNmUwZi00NDYyLTgxZTMtNmZmY2JhNGUxZjBm%40thread.v2/0?context=%7b%22Tid%22%3a%226ee2382e-9835-4eda-865d-83be47122d9a%22%2c%22Oid%22%3a%22874316ab-a72b-43dd-b117-561f0e708bbd%22%7d" target="_blank" rel="noopener noreferrer"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="name">كفر الشيخ</span><span class="hint">الدخول إلى رابط Teams</span></a></li>
+        <li><a class="card" href="https://teams.microsoft.com/meet/358297911833?p=20N8nIiu57CBNNhIg8" target="_blank" rel="noopener noreferrer"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="name">البحيرة</span><span class="hint">الدخول إلى رابط Teams</span></a></li>
+        <li><a class="card" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_ZDYzZTljNTItZjc0Yi00ZDRlLTk5NDUtZWQ0MDFjN2FmOWU4%40thread.v2/0?context=%7b%22Tid%22%3a%226ee2382e-9835-4eda-865d-83be47122d9a%22%2c%22Oid%22%3a%22c551bc14-23ef-4be7-a7c0-69ec3133c5f7%22%7d" target="_blank" rel="noopener noreferrer"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="name">الإسكندرية</span><span class="hint">الدخول إلى رابط Teams</span></a></li>
+        <li><a class="card" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_YjQ2ZTJkZjUtOWJhNy00MzA0LWE0MmQtY2JmMWRkMjdjMjU5%40thread.v2/0?context=%7b%22Tid%22%3a%226ee2382e-9835-4eda-865d-83be47122d9a%22%2c%22Oid%22%3a%22b676d67b-72d3-4ccb-8963-31ebc260c861%22%7d" target="_blank" rel="noopener noreferrer"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="name">مطروح</span><span class="hint">الدخول إلى رابط Teams</span></a></li>
+        <li><a class="card" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_ZWExNjRiMTktNTRjOS00N2IxLTk1NzgtOTcyZWE1MzE2M2M3%40thread.v2/0?context=%7b%22Tid%22%3a%226ee2382e-9835-4eda-865d-83be47122d9a%22%2c%22Oid%22%3a%226b553f9c-4f0a-4c85-a559-63b0e2309030%22%7d" target="_blank" rel="noopener noreferrer"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="name">دمياط</span><span class="hint">الدخول إلى رابط Teams</span></a></li>
+        <li><a class="card" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_MWZmMWU2YWQtMTk0Ni00YTNiLTkxMGEtNTlhMjE1M2JhN2M4%40thread.v2/0?context=%7b%22Tid%22%3a%226ee2382e-9835-4eda-865d-83be47122d9a%22%2c%22Oid%22%3a%2218c695e2-1d5a-4609-821e-61109eaea4d2%22%7d" target="_blank" rel="noopener noreferrer"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="name">الشرقية</span><span class="hint">الدخول إلى رابط Teams</span></a></li>
+        <li><a class="card" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_Mjk1Y2I5MjEtN2E1OS00NzAzLTgwMjctMzYyNjlhZGQyNGNk%40thread.v2/0?context=%7b%22Tid%22%3a%226ee2382e-9835-4eda-865d-83be47122d9a%22%2c%22Oid%22%3a%2221044192-b27e-4bc1-bb20-ca4a243bb0ac%22%7d" target="_blank" rel="noopener noreferrer"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="name">الإسماعيلية</span><span class="hint">الدخول إلى رابط Teams</span></a></li>
+        <li><a class="card" href="https://teams.live.com/meet/9349392489028?p=4jrrQzepxuTfQmbH2N" target="_blank" rel="noopener noreferrer"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="name">بور سعيد</span><span class="hint">الدخول إلى رابط Teams</span></a></li>
+      </ul>
+    </section>
+
+    <section id="qibli" hidden>
+      <a class="back" href="#home">العودة إلى القطاعات</a>
+      <h2 class="lead" tabindex="-1">الوجه القبلي</h2>
+      <p class="note">اضغط على اسم المحافظة للانتقال إلى رابط الاجتماع على Teams.</p>
+      <div class="divider" aria-hidden="true"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg></div>
+      <ul class="grid">
+        <li><a class="card" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_NDAzYzJhZjYtZTI1YS00ZTM3LTkwNzktMDczOWNhMmNlMGM5%40thread.v2/0?context=%7b%22Tid%22%3a%226ee2382e-9835-4eda-865d-83be47122d9a%22%2c%22Oid%22%3a%22f6a660c3-2953-4d09-9dc0-edfe21321a67%22%7d" target="_blank" rel="noopener noreferrer"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="name">الجيزة</span><span class="hint">الدخول إلى رابط Teams</span></a></li>
+        <li><a class="card" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_NDViMWNkZWYtNzc1Ni00NGNkLTgxNzEtNWFlZGZlOThlZDFl%40thread.v2/0?context=%7b%22Tid%22%3a%226ee2382e-9835-4eda-865d-83be47122d9a%22%2c%22Oid%22%3a%220375f0c1-d3e5-4d68-bbe2-b929889be893%22%7d" target="_blank" rel="noopener noreferrer"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="name">الفيوم</span><span class="hint">الدخول إلى رابط Teams</span></a></li>
+        <li><a class="card" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_OTRjNDdmNGUtYjU3OC00MTA1LTk4NGUtMmEzMGI5N2VkYWFm%40thread.v2/0?context=%7b%22Tid%22%3a%226ee2382e-9835-4eda-865d-83be47122d9a%22%2c%22Oid%22%3a%227e63f5de-a2d1-434c-a07b-c8921223e51b%22%7d" target="_blank" rel="noopener noreferrer"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="name">بني سويف</span><span class="hint">الدخول إلى رابط Teams</span></a></li>
+        <li><a class="card" href="https://teams.microsoft.com/l/meetup-join/19%3aXfbdL88L7yfW0K56dDzDrpDsnAZHVW2p2pTJxgMWDqE1%40thread.tacv2/1690977071531?context=%7b%22Tid%22%3a%226ee2382e-9835-4eda-865d-83be47122d9a%22%2c%22Oid%22%3a%226e9021d6-c204-4c96-9e91-ef65fed6af67%22%7d" target="_blank" rel="noopener noreferrer"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="name">المنيا</span><span class="hint">الدخول إلى رابط Teams</span></a></li>
+        <li><a class="card" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_YzU4NWNjZjctMGViNC00MGYxLWE3YzctYWJkZTZhMzdiOTE4%40thread.v2/0?context=%7b%22Tid%22%3a%22bf1bafe7-8adf-4fda-bae3-1b2d95cae864%22%2c%22Oid%22%3a%226d7ccf89-bc15-46be-875f-4b389417bb08%22%7d" target="_blank" rel="noopener noreferrer"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="name">أسيوط</span><span class="hint">الدخول إلى رابط Teams</span></a></li>
+        <li><a class="card" href="https://teams.microsoft.com/l/meetup-join/19%3asz50pCL_dch7m884K-IbRaaSM5LIe7Ef3jm4MADu24E1%40thread.tacv2/1676808720502?context=%7b%22Tid%22%3a%226ee2382e-9835-4eda-865d-83be47122d9a%22%2c%22Oid%22%3a%22a3fd139e-6ba5-4451-bf2e-07a7899abdd3%22%7d" target="_blank" rel="noopener noreferrer"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="name">الوادي الجديد</span><span class="hint">الدخول إلى رابط Teams</span></a></li>
+        <li><a class="card" href="https://teams.microsoft.com/l/meetup-join/19%32Epo1K92Xzo6Hayq1Fmkj21x4fUk7JZT7%40thread.tacv2/1676731000079?context=%7b%22Tid%22%3a%226ee2382e-9835-4eda-865d-83be47122d9a%22%2c%22Oid%22%3a%226a8d16e1-46f1-4423-9a09-25ac68e63216%22%7d" target="_blank" rel="noopener noreferrer"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="name">سوهاج</span><span class="hint">الدخول إلى رابط Teams</span></a></li>
+        <li><a class="card" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_MDM5YmM2Y2EtYTkzZC00ZmU2LTlkNTAtZjRhMTAyZDhjNTkz%40thread.v2/0?context=%7b%22Tid%22%3a%226ee2382e-9835-4eda-865d-83be47122d9a%22%2c%22Oid%22%3a%226e8e4276-6b9a-4ba0-869e-ecbd199c36fc%22%7d" target="_blank" rel="noopener noreferrer"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="name">قنا</span><span class="hint">الدخول إلى رابط Teams</span></a></li>
+        <li><a class="card" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_MGEwZTkwYjctODM4Zi00NjNmLTg5ZmQtZjhhMzY5NzBlMGE0%40thread.v2/0?context=%7b%22Tid%22%3a%226ee2382e-9835-4eda-865d-83be47122d9a%22%2c%22Oid%22%3a%2232941f22-104b-49c2-90c6-417a8c43d478%22%7d\" target="_blank" rel="noopener noreferrer"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="name">الأقصر</span><span class="hint">الدخول إلى رابط Teams</span></a></li>
+        <li><a class="card" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_MWY3OGZjOGMtMGM0Mi00NDczLTk1YzUtMGIwYWM3ODdkZTIx%40thread.v2/0?context=%7b%22Tid%22%3a%226ee2382e-9835-4eda-865d-83be47122d9a%22%2c%22Oid%22%3a%229b01a2a2-41a3-4c0d-85e3-cb88430c1586%22%7d" target="_blank" rel="noopener noreferrer"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="name">أسوان</span><span class="hint">الدخول إلى رابط Teams</span></a></li>
+        <li><a class="card" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_NGI5OGFmNGQtMTM5MC00YmM1LTkzOTctNDgwZjk2ZjBlZWQ5%40thread.v2/0?context=%7b%22Tid%22%3a%226ee2382e-9835-4eda-865d-83be47122d9a%22%2c%22Oid%22%3a%2269310ce7-eb2e-4b42-acf0-242a4f5967d9%22%7d" target="_blank" rel="noopener noreferrer"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="name">شمال سينا</span><span class="hint">الدخول إلى رابط Teams</span></a></li>
+        <li><a class="card" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_YzY4YWFhNjgtNzlmYy00MDdlLWFmZjMtZDZkOTE0NzU3NDFi%40thread.v2/0?context=%7b%22Tid%22%3a%226ee2382e-9835-4eda-865d-83be47122d9a%22%2c%22Oid%22%3a%223e124408-38b4-40a8-b4c4-09bfd6dd20c6%22%7d" target="_blank" rel="noopener noreferrer"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="name">جنوب سينا</span><span class="hint">الدخول إلى رابط Teams</span></a></li>
+        <li><a class="card" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_NDE1Zjk2MTUtNGM0YS00MjhkLThjNmUtZjBjY2MwZTRkYTA2%40thread.v2/0?context=%7b%22Tid%22%3a%226ee2382e-9835-4eda-865d-83be47122d9a%22%2c%22Oid%22%3a%22f238fa06-9498-40f7-8e61-b85014c47df8%22%7d" target="_blank" rel="noopener noreferrer"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="name">البحر الأحمر</span><span class="hint">الدخول إلى رابط Teams</span></a></li>
+        <li><a class="card" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_ZmI2YTJmYzQtNTk1My00Y2VhLTg5MmUtNWYxZjRiYjY0OTk1%40thread.v2/0?context=%7b%22Tid%22%3a%226ee2382e-9835-4eda-865d-83be47122d9a%22%2c%22Oid%22%3a%226ba3d481-bd5b-40dd-8d88-0e38fbf14ac2%22%7d" target="_blank" rel="noopener noreferrer"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 6.4-.9-3.9 5.1 3.9 5.1-6.4-.9L12 22.5l-2.6-5.9-6.4.9 3.9-5.1L3 7.5l6.4.9z"/></svg><span class="name">السويس</span><span class="hint">الدخول إلى رابط Teams</span></a></li>
+      </ul>
+    </section>
   </main>
 
   <footer>
-    <p>الجامع الأزهر الشريف &mdash; أروقة الوجه البحري</p>
+    <p>الجامع الأزهر الشريف &mdash; الأروقة الأزهرية</p>
   </footer>
+
+<script>
+  (function () {
+    var ids = ["home", "bahari", "qibli"];
+    var titles = {
+      home: "روابط التيمز الخاصة بالأروقة التابعة للجامع الأزهر",
+      bahari: "الوجه البحري | روابط التيمز - الجامع الأزهر",
+      qibli: "الوجه القبلي | روابط التيمز - الجامع الأزهر"
+    };
+    function route(first) {
+      var h = location.hash.replace("#", "");
+      if (ids.indexOf(h) < 0) h = "home";
+      ids.forEach(function (id) { document.getElementById(id).hidden = (id !== h); });
+      document.title = titles[h];
+      window.scrollTo(0, 0);
+      if (!first && h !== "home") {
+        var head = document.querySelector("#" + h + " .lead");
+        if (head) head.focus();
+      }
+    }
+    window.addEventListener("hashchange", function () { route(false); });
+    route(true);
+  })();
+</script>
 </body>
 </html>
